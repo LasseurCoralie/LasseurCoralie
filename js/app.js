@@ -1,31 +1,34 @@
 /* eslint-disable */
 const app = {
   init: function() {
+    // recup id bouton
+    const button = document.getElementById('button-timer');
+    //  recup id zone résultat + initialisation
+    const resultTxt = document.getElementById('result');
+    resultTxt.innerText = 0;
 
-    
 
-    const timerElt = document.getElementById('button-timer');
-    console.log(timerElt);
-    const modal = document.getElementById('modal');
-
-    let counter = 3;
+    // Partie compteur
+    let counter = 2;
 
     let timer = setInterval(function(){
-      timerElt.innerText = counter;
+      button.innerText = counter;
       console.log(counter);
       counter-- ;
-      if(counter === -1){
-        setTimeout(function(){
-          timerElt.innerText = 'calm down dude!'
-          clearInterval(timer);
-          modal.innerHTML = `<p class="result">You've clicked ${counter}</p>`;
-        }, 1000);
+      if(counter === 0){
 
+        button.addEventListener('click', function(){
+          let result = resultTxt.innerText++;
+        });
+
+        setTimeout(function(){
+          // changement texte dans la zone du bouton
+          button.innerText = 'calm down dude!'
+          clearInterval(timer);
+          button.setAttribute('disabled', true);
+        }, 1000);
       }
     }, 1000);
-    
-
-  // eslint-disable-next-line padded-blocks
   },
 };
 
