@@ -4,11 +4,14 @@ body {
 
 div#content{
   text-align: center;
-  margin-top: 50vh;
+  margin-top: 45vh;
   transform: translateY(-50%);
   font-size: 3rem;
 }
 
+div.main{
+  margin-bottom: 3rem;
+}
 p{
   color: white;
   font-family: 'Courier Prime', monospace;
@@ -32,12 +35,15 @@ button{
   height: 150px;
   padding: 2rem;
   position: relative;
-  color: white
+  color: white;
+  padding-bottom: 2rem;
   
 }
 
 div#modal{
-  position: sticky;
-  margin: 2rem auto;
+  position: absolute;
+  left: 50vw;
+  transform: translateX(-50%);
   height: 50px;
+  display: none;
 }
